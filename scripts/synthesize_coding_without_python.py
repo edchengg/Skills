@@ -39,7 +39,7 @@ generate(
     server_args="--async-scheduling",
     # launch a sandbox alongside the job that will keep track of
     # ipython sessions with stateful code execution
-    with_sandbox=True,
+    with_sandbox=False,
     # num_chunks=N will parallelize the workload across X nodes
     # dependent_jobs=M will schedule this many dependent jobs on Slurm
     # (useful if your cluster has a fixed timeout per job)
