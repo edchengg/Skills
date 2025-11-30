@@ -19,7 +19,7 @@ generate(
         # you can also add ++server.code_execution.code_execution_timeout=120 to match
         # the setting in the official system prompt, but we found this to not impact
         # the accuracy, so keeping the default of 10 seconds
-        "++code_execution=false "
+        "++code_execution=true "
         "++server.code_execution.max_code_executions=100 "
         # settings to enable high reasoning and Python built-in tool
         "++chat_template_kwargs.reasoning_effort=high "
