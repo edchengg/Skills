@@ -1,6 +1,6 @@
 from nemo_skills.pipeline.cli import generate, wrap_arguments
 
-cluster = "my-slurm"  # change this to match your cluster config name
+cluster = "slurm"  # change this to match your cluster config name
 
 generate(
     ctx=wrap_arguments(
