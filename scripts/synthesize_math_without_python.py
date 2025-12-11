@@ -32,9 +32,9 @@ generate(
     server_type='vllm',
     # can customize the number of GPUs used
     server_gpus=8,
-    input_file="/lustre/fsw/portfolios/llmservice/users/dongfuj/Workspace/Skills/data/math_sft_data_clean_prompts_only_163k_deduped_against_math_tir_78k.jsonl",
+    input_file="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/verl/examples/data_generation/data_final/aime_data/save_data/math_contest_v1.jsonl",
     # generations will be here. Needs to be a mounted folder
-    output_dir="/lustre/fsw/portfolios/llmservice/users/dongfuj/Workspace/Skills/gpt-oss-sdg/without-python/math_deduped_78k_high",
+    output_dir="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/gpt-oss-sdg/without-python/math_deduped_78k_high",
     # any vllm arguments can be used here
     server_args="--async-scheduling",
     # launch a sandbox alongside the job that will keep track of
