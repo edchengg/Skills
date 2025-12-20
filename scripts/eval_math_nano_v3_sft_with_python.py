@@ -21,7 +21,7 @@ eval(
     server_gpus=8,
     num_chunks=4,
     with_sandbox=True,
-    benchmarks="hmmt_feb25:8",
+    benchmarks="aime25:8",
     server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching --enable-auto-tool-choice --tool-call-parser qwen3_coder",
     output_dir=output_dir + model_name + "/with-python",
 )
