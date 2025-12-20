@@ -47,3 +47,8 @@ CLAUDE.md
 /gpt-oss*
 /metadata
 /jobs.txt
+# logs / eval outputs
+*.log
+**/eval-logs/
+deepseek-v32-sdg/
+nano-v3-sft-evalnano-v3-sft/
