@@ -8,7 +8,7 @@ i=0
 generate(
     ctx=wrap_arguments(
         "++skip_filled=True "
-        "++prompt_config=dpsk/math_proof_gen "
+        "++prompt_config=qwen/math-cot "
         "++inference.top_p=0.95 "
         "++inference.tokens_to_generate=120000 " 
         "++max_concurrent_requests=1024 "
@@ -23,11 +23,11 @@ generate(
     server_gpus=gpus,
     partition='batch',
     server_nodes=server_nodes,
-    num_chunks=16,
-    dependent_jobs=13,
+    num_chunks=1,
+    dependent_jobs=0,
     starting_seed=0,
-    num_random_seeds=8,
-    input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/AceProof/nemotron_math_proofs_v1_aops.jsonl",
-    output_dir=f"{output_dir}/nemotron_math_proofs_v1_aops/",
+    num_random_seeds=1,
+    input_file="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/verl/examples/data_generation/data_final/aime_data/save_data/math_contest_v1.jsonl",
+    output_dir=f"{output_dir}/math_contest_v1/",
     server_args=f"--ep-size {gpus * server_nodes} --dp {gpus * server_nodes} --enable-dp-attention --reasoning-parser deepseek-v3 --log-requests --mem-fraction-static=0.8",
 )
