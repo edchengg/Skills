@@ -5,7 +5,7 @@ output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/nano
 gpus=8
 server_nodes=1
 i=0
-for step in [50, 150, 200, 250, 300, 350, 400]:
+for step in [100]:
     model_name = f"nano-v3-rl-step-{step}"
     model_path = f"/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/nemo-rl-internal/results/nano_v3/step_{step}/huggingface"
     for benchmark in ["aime25","hmmt_feb25"]:
