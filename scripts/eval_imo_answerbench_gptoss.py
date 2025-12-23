@@ -39,7 +39,6 @@ eval(
     # ipython sessions with stateful code execution
     with_sandbox=True,
     dependent_jobs=0,
-    expname=f"{model_name}-with-python",
     model="openai/gpt-oss-120b",
     server_type='vllm',
     num_chunks=1,
