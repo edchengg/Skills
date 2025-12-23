@@ -41,7 +41,7 @@ eval(
     dependent_jobs=0,
     model="openai/gpt-oss-120b",
     server_type='vllm',
-    num_chunks=10,
+    num_chunks=4,
     benchmarks=f"{benchmark}:8",
     output_dir=output_dir + model_name + "/with-python",
 )
@@ -82,7 +82,7 @@ eval(
     dependent_jobs=0,
     model="openai/gpt-oss-120b",
     server_type='vllm',
-    num_chunks=10,
+    num_chunks=4,
     benchmarks=f"{benchmark}:8",
     output_dir=output_dir + model_name + "/no-python",
 )
