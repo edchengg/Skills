@@ -39,11 +39,9 @@ eval(
     # ipython sessions with stateful code execution
     with_sandbox=True,
     dependent_jobs=0,
-    cluster=cluster,
     expname=f"{model_name}-with-python",
     model="openai/gpt-oss-120b",
     server_type='vllm',
-    server_gpus=8,
     num_chunks=1,
     benchmarks=f"{benchmark}:1",
     output_dir=output_dir + model_name + "/with-python",
