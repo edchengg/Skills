@@ -18,7 +18,7 @@ user: |-
       Towards Robust Mathematical Reasoning
 
     * **Numerical Equivalence:** e.g., `$1/2$` is equivalent to `$0.5$`;
-      `$\sqrt{2}/2$` is equivalent to `$1/\sqrt{2}$`.
+      `$\sqrt{{2}}/2$` is equivalent to `$1/\sqrt{{2}}$`.
 
     * **Set/List Equivalence:** Unless specified as an ordered
       tuple/vector, the order of elements does not matter (e.g., `{{1,
@@ -35,7 +35,7 @@ user: |-
     follow this structure will result in task failure.
 
     **Part 1: Analysis (Chain-of-Thought)**
-    You MUST perform your analysis within `<thinking></thinking>` tags.
+    You MUST perform your analysis within `<think></think>` tags.
     Make your thinking concise. This section details your reasoning
     process and must follow these steps sequentially:
 
@@ -55,19 +55,19 @@ user: |-
       "No").
 
     **Part 2: Final Grade**
-    Immediately following the closing `</thinking>` tag, output **ONLY**
+    Immediately following the closing `</think>` tag, output **ONLY**
     the final grade.
 
     * If Correct, output `Judgement: Yes`
     * If Incorrect, output `Judgement: No`
 
     **CRITICAL CONSTRAINT: Do not add any text, explanations, or
-    formatting outside the `<thinking>` tags or the final `Judgement: Yes` or `Judgement: No`
+    formatting outside the `<think>` tags or the final `Judgement: Yes` or `Judgement: No`
     output.**
 
     Output exmaple:
 
-    <thinking>
+    <think>
     1. **Golden Answer:** $(-\infty,-4)\cup(-4,\infty)$
     2. **Extracted Model Answer:** $\varnothing$ (the empty set)
     3. **Equivalence Analysis:**
@@ -78,7 +78,7 @@ user: |-
       18
       Towards Robust Mathematical Reasoning
     4. **Conclusion:** No
-    </thinking>
+    </think>
 
     Judgement: No
 
