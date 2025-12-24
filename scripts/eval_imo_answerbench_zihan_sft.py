@@ -27,26 +27,26 @@ for benchmark in ["hmmt_feb25", "hmmt_nov25"]:
         output_dir=output_dir + model_name + "/no-python",
     )
 
-    # with python
-    eval(
-    ctx=wrap_arguments(
-        "++inference.tokens_to_generate=120000 "
-        "++inference.temperature=1.0 "
-        "++inference.top_p=1.0 "
-        "++tool_modules=[nemo_skills.mcp.servers.python_tool::PythonTool] "
-        "++prompt_config=generic/math_sft "
-    ),
-        cluster=cluster,
-        expname=f"{model_name}-with-python",
-        model=model_path,
-        server_type='vllm',
-        server_gpus=8,
-        num_chunks=1,
-        with_sandbox=True,
-        benchmarks=f"{benchmark}:32",
-        server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching --enable-auto-tool-choice --tool-call-parser qwen3_coder",
-        output_dir=output_dir + model_name + "/with-python",
-    )
+    # # with python
+    # eval(
+    # ctx=wrap_arguments(
+    #     "++inference.tokens_to_generate=120000 "
+    #     "++inference.temperature=1.0 "
+    #     "++inference.top_p=1.0 "
+    #     "++tool_modules=[nemo_skills.mcp.servers.python_tool::PythonTool] "
+    #     "++prompt_config=generic/math_sft "
+    # ),
+    #     cluster=cluster,
+    #     expname=f"{model_name}-with-python",
+    #     model=model_path,
+    #     server_type='vllm',
+    #     server_gpus=8,
+    #     num_chunks=1,
+    #     with_sandbox=True,
+    #     benchmarks=f"{benchmark}:32",
+    #     server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching --enable-auto-tool-choice --tool-call-parser qwen3_coder",
+    #     output_dir=output_dir + model_name + "/with-python",
+    # )
 
 for benchmark in ["imo_answerbench"]:
     eval(
@@ -67,23 +67,23 @@ for benchmark in ["imo_answerbench"]:
         output_dir=output_dir + model_name + "/no-python",
     )
 
-    # with python
-    eval(
-    ctx=wrap_arguments(
-        "++inference.tokens_to_generate=120000 "
-        "++inference.temperature=1.0 "
-        "++inference.top_p=1.0 "
-        "++tool_modules=[nemo_skills.mcp.servers.python_tool::PythonTool] "
-        "++prompt_config=generic/math_sft "
-    ),
-        cluster=cluster,
-        expname=f"{model_name}-with-python",
-        model=model_path,
-        server_type='vllm',
-        server_gpus=8,
-        num_chunks=4,
-        with_sandbox=True,
-        benchmarks=f"{benchmark}:8",
-        server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching --enable-auto-tool-choice --tool-call-parser qwen3_coder",
-        output_dir=output_dir + model_name + "/with-python",
-    )
+    # # with python
+    # eval(
+    # ctx=wrap_arguments(
+    #     "++inference.tokens_to_generate=120000 "
+    #     "++inference.temperature=1.0 "
+    #     "++inference.top_p=1.0 "
+    #     "++tool_modules=[nemo_skills.mcp.servers.python_tool::PythonTool] "
+    #     "++prompt_config=generic/math_sft "
+    # ),
+    #     cluster=cluster,
+    #     expname=f"{model_name}-with-python",
+    #     model=model_path,
+    #     server_type='vllm',
+    #     server_gpus=8,
+    #     num_chunks=4,
+    #     with_sandbox=True,
+    #     benchmarks=f"{benchmark}:8",
+    #     server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching --enable-auto-tool-choice --tool-call-parser qwen3_coder",
+    #     output_dir=output_dir + model_name + "/with-python",
+    # )
