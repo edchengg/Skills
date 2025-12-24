@@ -5,8 +5,8 @@ output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/ziha
 gpus=8
 server_nodes=1
 i=0
-model_name = "zihan-sft-10992"
-model_path = "/lustre/fsw/portfolios/llmservice/users/zihanl/inform/megatron2hf/llm_ft/Post-Training/megatron-lm/checkpoints/sft_gptoss_v1_1_32nodes_allpurpose_5e-5_32_262144/safetensors-checkpoint-10992"
+model_name = "zihan-sft-6560"
+model_path = "/lustre/fsw/portfolios/llmservice/users/zihanl/inform/megatron2hf/llm_ft/Post-Training/megatron-lm/checkpoints/sft_256k_seqpack_gptoss_5e-5_64_262144_epoch_1/safetensors-checkpoint-6560"
 
 for benchmark in ["hmmt_feb25", "hmmt_nov25"]:
     eval(
@@ -48,24 +48,24 @@ for benchmark in ["hmmt_feb25", "hmmt_nov25"]:
     #     output_dir=output_dir + model_name + "/with-python",
     # )
 
-for benchmark in ["imo_answerbench"]:
-    eval(
-        ctx=wrap_arguments(
-            "++inference.tokens_to_generate=120000 "
-            "++inference.temperature=1.0 "
-            "++inference.top_p=1.0 "
-            "++prompt_config=generic/math_sft "
-        ),
-        cluster=cluster,
-        expname=f"{model_name}-no-python",
-        model=model_path,
-        server_type='vllm',
-        server_gpus=8,
-        num_chunks=4,
-        benchmarks=f"{benchmark}:8",
-        server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching",
-        output_dir=output_dir + model_name + "/no-python",
-    )
+# for benchmark in ["imo_answerbench"]:
+#     eval(
+#         ctx=wrap_arguments(
+#             "++inference.tokens_to_generate=120000 "
+#             "++inference.temperature=1.0 "
+#             "++inference.top_p=1.0 "
+#             "++prompt_config=generic/math_sft "
+#         ),
+#         cluster=cluster,
+#         expname=f"{model_name}-no-python",
+#         model=model_path,
+#         server_type='vllm',
+#         server_gpus=8,
+#         num_chunks=4,
+#         benchmarks=f"{benchmark}:8",
+#         server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching",
+#         output_dir=output_dir + model_name + "/no-python",
+#     )
 
     # # with python
     # eval(
