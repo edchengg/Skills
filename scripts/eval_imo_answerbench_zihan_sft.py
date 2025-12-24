@@ -14,7 +14,7 @@ for benchmark in ["hmmt_feb25", "hmmt_nov25"]:
             "++inference.tokens_to_generate=120000 "
             "++inference.temperature=1.0 "
             "++inference.top_p=1.0 "
-            "++prompt_config=generic/math_sft "
+            "++prompt_config=generic/math_sft_notool "
         ),
         cluster=cluster,
         expname=f"{model_name}-no-python",
