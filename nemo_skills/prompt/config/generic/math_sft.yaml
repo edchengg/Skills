@@ -1,0 +1,8 @@
+# default prompt for all python based code benchmark evaluations on system prompt.
+# used by models which are trained with this prompt.
+
+system: |-
+  You are a helpful and harmless assistant.
+
+user: |-
+  {question}\n\nPlease place your final answer inside \boxed{{}}.
