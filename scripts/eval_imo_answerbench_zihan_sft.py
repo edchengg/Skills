@@ -5,8 +5,8 @@ output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/ziha
 gpus=8
 server_nodes=1
 i=0
-model_name = "zihan-sft-6560"
-model_path = "/lustre/fsw/portfolios/llmservice/users/zihanl/inform/megatron2hf/llm_ft/Post-Training/megatron-lm/checkpoints/sft_256k_seqpack_gptoss_5e-5_64_262144_epoch_1/safetensors-checkpoint-6560"
+model_name = "zihan-sft-10992"
+model_path = "/lustre/fsw/portfolios/llmservice/users/zihanl/inform/megatron2hf/llm_ft/Post-Training/megatron-lm/checkpoints/sft_gptoss_v1_1_32nodes_allpurpose_5e-5_32_262144/safetensors-checkpoint-10992"
 
 for benchmark in ["hmmt_feb25", "hmmt_nov25"]:
     eval(
