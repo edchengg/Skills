@@ -1,7 +1,7 @@
 from nemo_skills.pipeline.cli import generate, wrap_arguments, eval
 
 cluster = "slurm"
-output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/nano-v3-eval"
+output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/nano-v3-eval/"
 gpus=8
 server_nodes=1
 i=0

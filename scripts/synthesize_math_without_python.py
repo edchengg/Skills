@@ -32,9 +32,9 @@ generate(
     server_type='vllm',
     # can customize the number of GPUs used
     server_gpus=8,
-    input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/AceProof/aimo_aops_raw_nonproof_n9_filtered.jsonl",
+    input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/AceProof/aimo_aops_raw_nonproof_n9_filtered.min10000.jsonl",
     # generations will be here. Needs to be a mounted folder
-    output_dir="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/gpt-oss-sdg/without-python/aimo_aops_raw_nonproof_n9_filtered",
+    output_dir="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/gpt-oss-sdg/without-python/aimo_aops_raw_nonproof_n9_filtered.min10000",
     # any vllm arguments can be used here
     server_args="--async-scheduling",
     # launch a sandbox alongside the job that will keep track of
@@ -47,5 +47,5 @@ generate(
     num_chunks=1,
     dependent_jobs=6,
     starting_seed=0,
-    num_random_seeds=8,
+    num_random_seeds=32,
 )
