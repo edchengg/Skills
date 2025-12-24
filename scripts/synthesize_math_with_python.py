@@ -32,9 +32,9 @@ generate(
     server_type='vllm',
     # can customize the number of GPUs used
     server_gpus=8,
-    input_file="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/verl/examples/data_generation/data_final/aime_data/save_data/math_contest_v1.jsonl",
+    input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/AceProof/aimo_aops_raw_nonproof_n9_filtered.min10000.jsonl",
     # generations will be here. Needs to be a mounted folder
-    output_dir="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/gpt-oss-sdg/with-python/math_contest_v1",
+    output_dir="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/gpt-oss-sdg/with-python/aimo_aops_raw_nonproof_n9_filtered_min10000",
     # any vllm arguments can be used here
     server_args="--async-scheduling",
     # launch a sandbox alongside the job that will keep track of
@@ -45,7 +45,7 @@ generate(
     # (useful if your cluster has a fixed timeout per job)
     # set these according to your cluster configuration
     num_chunks=1,
-    dependent_jobs=1,
+    dependent_jobs=2,
     starting_seed=0,
-    num_random_seeds=8,
+    num_random_seeds=32,
 )
