@@ -5,4 +5,4 @@ system: |-
   You are a helpful and harmless assistant.
 
 user: |-
-  {question}\n\nPlease place your final answer inside \boxed{{}}.
+  {problem}\n\nPlease place your final answer inside \boxed{{}}.
