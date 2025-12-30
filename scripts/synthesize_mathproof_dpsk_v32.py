@@ -24,7 +24,7 @@ generate(
     partition='batch',
     server_nodes=server_nodes,
     num_chunks=16,
-    dependent_jobs=12,
+    dependent_jobs=2,
     starting_seed=0,
     num_random_seeds=1,
     input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/AceProof/nemotron_math_proofs_v1_aops_min10000.jsonl",
