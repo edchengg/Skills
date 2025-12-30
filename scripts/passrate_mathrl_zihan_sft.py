@@ -47,7 +47,6 @@ generate(
     model="openai/gpt-oss-120b",
     cluster=cluster,
     expname=f"{model_name}-judge",
-    model=model_path,
     server_type='vllm',
     num_chunks=1,
     # can customize the number of GPUs used
