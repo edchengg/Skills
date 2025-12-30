@@ -23,7 +23,6 @@ generate(
     num_chunks=1,
     server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching",
     output_dir=output_dir + model_name + "/no-python",
-    server_type='vllm',
     # can customize the number of GPUs used
     server_gpus=8,
     input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/verl/examples/data_generation/data_final/acereason_2_data/acereason_v2_math_release.jsonl",
