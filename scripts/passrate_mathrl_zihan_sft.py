@@ -55,5 +55,5 @@ generate(
     output_dir=output_dir + model_name + "/acereasonv2-judge",
     dependent_jobs=1,
     starting_seed=0,
-    num_random_seeds=1,
+    num_random_seeds=16,
 )
