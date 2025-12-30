@@ -10,8 +10,8 @@ generate(
         "++skip_filled=True "
         "++prompt_config=gpt-oss/math_proof_gen "
         "++inference.top_p=0.95 "
-        "++inference.tokens_to_generate=65536 " 
-        "++max_concurrent_requests=1024 "
+        "++inference.tokens_to_generate=96000 " 
+        "++max_concurrent_requests=256 "
         "++inference.endpoint_type=chat "
         "++chat_template_kwargs.thinking=true "
     ),
@@ -24,10 +24,10 @@ generate(
     partition='batch',
     server_nodes=server_nodes,
     num_chunks=16,
-    dependent_jobs=2,
-    starting_seed=0,
+    dependent_jobs=10,
+    starting_seed=1,
     num_random_seeds=1,
-    input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/AceProof/nemotron_math_proofs_v1_aops_min10000.jsonl",
-    output_dir=f"{output_dir}/nemotron_math_proofs_v1_aops_min10000/",
+    input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/AceProof/nemotron_math_proofs_v1_aops_min40000.jsonl",
+    output_dir=f"{output_dir}/nemotron_math_proofs_v1_aops_min40000/",
     server_args=f"--ep-size {gpus * server_nodes} --dp {gpus * server_nodes} --enable-dp-attention --reasoning-parser deepseek-v3 --log-requests --mem-fraction-static=0.8",
 )
