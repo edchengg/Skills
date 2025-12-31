@@ -51,8 +51,8 @@ generate(
     num_chunks=1,
     # can customize the number of GPUs used
     server_gpus=8,
-    input_dir=output_dir + model_name + "/acereasonv2",
-    output_dir=output_dir + model_name + "/acereasonv2-judge",
+    input_dir=output_dir + model_name + "/curriculum_v7_acrid-teal_main_rename.filtered",
+    output_dir=output_dir + model_name + "/curriculum_v7_acrid-teal_main_rename.filtered-judge",
     dependent_jobs=0,
     starting_seed=0,
     num_random_seeds=16,
