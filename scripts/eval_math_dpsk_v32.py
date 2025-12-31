@@ -1,10 +1,4 @@
 from nemo_skills.pipeline.cli import generate, wrap_arguments, eval
-import json
-
-loader_cfg = {
-    "enable_multithread_load": True,
-    "num_threads": 32,   # try 8/16 first; 110 is usually counterproductive on Lustre
-}
 
 cluster = "slurm"
 output_dir = "/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/deepseek-v32-eval"
@@ -33,5 +27,5 @@ eval(
     dependent_jobs=0,
     benchmarks=f"aime25:1",
     output_dir=f"{output_dir}/",
-    server_args=f"--ep-size {gpus * server_nodes} --dp {gpus * server_nodes} --enable-dp-attention --reasoning-parser deepseek-v3 --log-requests --mem-fraction-static=0.8 --model-loader-extra-config '{json.dumps(loader_cfg)}'",
+    server_args=f"--ep-size {gpus * server_nodes} --dp {gpus * server_nodes} --enable-dp-attention --reasoning-parser deepseek-v3 --log-requests --mem-fraction-static=0.8 --model-loader-extra-config '{{\"enable_multithread_load\": true, \"num_threads\": 32}}'",
 )
