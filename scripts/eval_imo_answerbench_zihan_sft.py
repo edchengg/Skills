@@ -8,7 +8,7 @@ i=0
 model_name = "zihan-sft-29916"
 model_path = "/lustre/fsw/portfolios/llmservice/users/zihanl/inform/megatron2hf/llm_ft/Post-Training/megatron-lm/checkpoints/sft_gptoss_v2_1_32nodes_allpurpose_5e-5_32_262144/safetensors-checkpoint-29916"
 
-for benchmark in ["hmmt_feb25", "hmmt_nov25"]:
+for benchmark in ["aime25","hmmt_feb25", "hmmt_nov25"]:
     eval(
         ctx=wrap_arguments(
             "++inference.tokens_to_generate=131072 "
