@@ -44,7 +44,7 @@ eval(
     server_nodes=server_nodes,
     num_chunks=1,
     dependent_jobs=0,
-    benchmarks=f"aime25:1",
+    benchmarks=f"aime25:8",
     output_dir=f"{output_dir}/",
     server_args=server_args,
 )
