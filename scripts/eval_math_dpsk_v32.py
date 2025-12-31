@@ -1,7 +1,7 @@
 from nemo_skills.pipeline.cli import generate, wrap_arguments, eval
 
 cluster = "slurm"
-output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/deepseek-v32-sdg"
+output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/deepseek-v32-eval"
 gpus=8
 server_nodes=2
 i=0
@@ -25,9 +25,7 @@ generate(
     server_nodes=server_nodes,
     num_chunks=1,
     dependent_jobs=0,
-    starting_seed=0,
-    num_random_seeds=1,
-    input_file="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/verl/examples/data_generation/data_final/aime_data/save_data/math_contest_v1.jsonl",
-    output_dir=f"{output_dir}/math_contest_v1/",
-    server_args=f"--ep-size {gpus * server_nodes} --dp {gpus * server_nodes} --enable-dp-attention --reasoning-parser deepseek-v3 --log-requests --mem-fraction-static=0.8",
+    benchmarks=f"aime25:1",
+    output_dir=f"{output_dir}/",
+    server_args=f"--ep-size {gpus * server_nodes} --dp {gpus * server_nodes} --enable-dp-attention --reasoning-parser deepseek-v3 --log-requests --mem-fraction-static=0.8 --max-parallel-loading-workers 110",
 )
