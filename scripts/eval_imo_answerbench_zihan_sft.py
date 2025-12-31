@@ -5,13 +5,13 @@ output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/ziha
 gpus=8
 server_nodes=1
 i=0
-model_name = "zihan-sft-10992"
-model_path = "/lustre/fsw/portfolios/llmservice/users/zihanl/inform/megatron2hf/llm_ft/Post-Training/megatron-lm/checkpoints/sft_gptoss_v1_1_32nodes_allpurpose_5e-5_32_262144/safetensors-checkpoint-10992"
+model_name = "zihan-sft-29916"
+model_path = "/lustre/fsw/portfolios/llmservice/users/zihanl/inform/megatron2hf/llm_ft/Post-Training/megatron-lm/checkpoints/sft_gptoss_v2_1_32nodes_allpurpose_5e-5_32_262144/safetensors-checkpoint-29916"
 
 for benchmark in ["hmmt_feb25", "hmmt_nov25"]:
     eval(
         ctx=wrap_arguments(
-            "++inference.tokens_to_generate=120000 "
+            "++inference.tokens_to_generate=131072 "
             "++inference.temperature=1.0 "
             "++inference.top_p=1.0 "
             "++prompt_config=generic/math_sft_notool "
@@ -51,7 +51,7 @@ for benchmark in ["hmmt_feb25", "hmmt_nov25"]:
 for benchmark in ["imo_answerbench"]:
     eval(
         ctx=wrap_arguments(
-            "++inference.tokens_to_generate=120000 "
+            "++inference.tokens_to_generate=131072 "
             "++inference.temperature=1.0 "
             "++inference.top_p=1.0 "
             "++prompt_config=generic/math_sft_notool "
