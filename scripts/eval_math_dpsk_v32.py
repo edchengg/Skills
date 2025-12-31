@@ -5,7 +5,7 @@ output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/deep
 gpus=8
 server_nodes=2
 i=0
-generate(
+eval(
     ctx=wrap_arguments(
         "++skip_filled=True "
         "++prompt_config=qwen/math-cot "
