@@ -1,7 +1,7 @@
 from nemo_skills.pipeline.cli import generate, wrap_arguments, eval
 
 cluster = "slurm"
-output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/deepseek-v32-sdg"
+output_dir = "/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/deepseek-v32-sdg"
 gpus=8
 server_nodes=2
 i=0
@@ -24,10 +24,10 @@ generate(
     partition='batch',
     server_nodes=server_nodes,
     num_chunks=8,
-    dependent_jobs=12,
-    starting_seed=0,
+    dependent_jobs=6,
+    starting_seed=2,
     num_random_seeds=1,
-    input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/AceProof/nemotron_math_proofs_v1_aops.jsonl",
+    input_file="/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/AceProof/nemotron_math_proofs_v1_aops_min10000.jsonl",
     output_dir=f"{output_dir}/nemotron_math_proofs_v1_aops/",
     server_args=f"--ep-size {gpus * server_nodes} --dp {gpus * server_nodes} --enable-dp-attention --reasoning-parser deepseek-v3 --log-requests --mem-fraction-static=0.8",
 )
