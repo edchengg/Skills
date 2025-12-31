@@ -1,17 +1,9 @@
 from nemo_skills.pipeline.cli import generate, wrap_arguments, eval
 
-import json, shlex
-
-ml_extra = json.dumps(
-    {"enable_multithread_load": True, "num_threads": 32},
-    separators=(",", ":"),
-)
-
-
 cluster = "slurm"
 output_dir = "/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/deepseek-v32-eval"
 gpus=8
-server_nodes=2
+server_nodes=1
 i=0
 
 server_args = (
@@ -21,7 +13,6 @@ server_args = (
     "--reasoning-parser deepseek-v3 "
     "--log-requests "
     "--mem-fraction-static=0.8 "
-    f"--model-loader-extra-config {shlex.quote(ml_extra)}"
 )
 
 eval(
