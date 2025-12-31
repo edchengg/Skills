@@ -11,7 +11,7 @@ model_path = "/lustre/fsw/portfolios/llmservice/users/zihanl/inform/megatron2hf/
 for benchmark in ["aime25","hmmt_feb25", "hmmt_nov25"]:
     eval(
         ctx=wrap_arguments(
-            "++inference.tokens_to_generate=131072 "
+            "++inference.tokens_to_generate=120000 "
             "++inference.temperature=1.0 "
             "++inference.top_p=1.0 "
             "++prompt_config=generic/math_sft_notool "
