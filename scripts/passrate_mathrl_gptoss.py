@@ -5,7 +5,7 @@ cluster = "slurm"  # change this to match your cluster config name
 generate(
     ctx=wrap_arguments(
         # we are using fewer tokens than max context length as code output isn't accounted for
-        "++inference.tokens_to_generate=64000 "
+        "++inference.tokens_to_generate=90000 "
         # recommended inference settings including prompt config
         "++inference.temperature=1.0 "
         "++inference.top_p=1.0 "
