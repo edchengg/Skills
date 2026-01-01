@@ -32,9 +32,9 @@ generate(
     server_type='vllm',
     # can customize the number of GPUs used
     server_gpus=8,
-    input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/AceProof/data_processing_rl/zero_passrate_combined.jsonl",
+    input_file="/lustre/fsw/portfolios/llmservice/projects/llmservice_fm_text/users/yachen/AceMath/AceProof/data_processing_rl/acereason_v3_lowpassrate_data.jsonl",
     # generations will be here. Needs to be a mounted folder
-    output_dir="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/gpt-oss-sdg/with-python/acereasonv3_0passrate",
+    output_dir="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/gpt-oss-sdg/with-python/acereasonv3_lowpassrate",
     # any vllm arguments can be used here
     server_args="--async-scheduling",
     # launch a sandbox alongside the job that will keep track of
