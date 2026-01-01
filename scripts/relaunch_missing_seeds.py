@@ -9,6 +9,8 @@ This script:
 """
 import os
 import sys
+from nemo_skills.pipeline.cli import generate, wrap_arguments
+
 
 # Configuration
 OUTPUT_DIR = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/gpt-oss-sdg/with-python/acereasonv3_lowpassrate"
