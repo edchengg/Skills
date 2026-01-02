@@ -27,7 +27,7 @@ generate(
     dependent_jobs=4,
     starting_seed=0,
     num_random_seeds=10,
-    input_file="/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/AceProof/aimo_aops_raw_nonproof_n9_filtered.min10000.jsonl",
+    input_file="/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/AceProof/aimo_aops_raw_nonproof_n9_filtered.min10000.jsonl",
     output_dir=f"{output_dir}/aimo_aops_raw_nonproof_n9_filtered.min10000/",
     server_args=f"--ep-size {gpus * server_nodes} --dp {gpus * server_nodes} --enable-dp-attention --reasoning-parser deepseek-v3 --log-requests --mem-fraction-static=0.8",
 )
