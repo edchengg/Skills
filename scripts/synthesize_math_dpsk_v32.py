@@ -8,7 +8,7 @@ i=0
 generate(
     ctx=wrap_arguments(
         "++skip_filled=True "
-        "++prompt_config=generic/math "
+        "++prompt_config=qwen/math-cot "
         "++inference.top_p=0.95 "
         "++inference.tokens_to_generate=120000 " 
         "++max_concurrent_requests=1024 "
