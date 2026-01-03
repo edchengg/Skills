@@ -16,7 +16,8 @@ generate(
         "++chat_template_kwargs.thinking=true "
     ),
     cluster=cluster,
-    model="deepseek-ai/DeepSeek-V3.2-Speciale",
+    model="/scratch/fsw/portfolios/llmservice/users/yachen/cache/DeepSeek-V3.2-Speciale",
+    server_container="/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/container/nemo-skills-sglang-v32.sqsh",
     with_sandbox=False,
     expname=f"generate_{i}",
     server_type='sglang',
