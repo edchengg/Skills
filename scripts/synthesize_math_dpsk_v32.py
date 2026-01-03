@@ -3,7 +3,7 @@ from nemo_skills.pipeline.cli import generate, wrap_arguments, eval
 cluster = "slurm"
 output_dir = "/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/deepseek-v32-sdg"
 gpus=8
-server_nodes=2
+server_nodes=1
 i=0
 generate(
     ctx=wrap_arguments(
