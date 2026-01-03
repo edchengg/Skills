@@ -3,7 +3,7 @@ from nemo_skills.pipeline.cli import generate, wrap_arguments, eval
 cluster = "slurm"
 output_dir = "/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/deepseek-v32-sdg"
 gpus=8
-server_nodes=2
+server_nodes=1
 i=0
 generate(
     ctx=wrap_arguments(
@@ -25,7 +25,7 @@ generate(
     partition='batch',
     server_nodes=server_nodes,
     num_chunks=8,
-    dependent_jobs=3,
+    dependent_jobs=4,
     starting_seed=2,
     num_random_seeds=6,
     input_file="/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/AceProof/nemotron_math_proofs_v1_aops_min10000.jsonl",
