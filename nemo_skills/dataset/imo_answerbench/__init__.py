@@ -25,5 +25,6 @@ JUDGE_PIPELINE_ARGS = {
     "model": "openai/gpt-oss-120b",
     "server_type": "vllm",
     "server_gpus": 8,
+    "server_args": "--no-enable-prefix-caching",
 }
 JUDGE_ARGS = "++prompt_config=judge/imo-answerbench ++generation_key=judgement ++add_generation_stats=False"
