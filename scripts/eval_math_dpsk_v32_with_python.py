@@ -27,7 +27,7 @@ eval(
         "++tool_modules=[nemo_skills.mcp.servers.python_tool::PythonTool] "
     ),
     cluster=cluster,
-    model="/scratch/fsw/portfolios/llmservice/users/yachen/cache/DeepSeek-V3.2-Speciale",
+    model="/scratch/fsw/portfolios/llmservice/users/yachen/cache/DeepSeek-V3.2",
     server_container="/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/container/nemo-skills-sglang-v32.sqsh",
     with_sandbox=True,
     expname=f"generate_{i}",
