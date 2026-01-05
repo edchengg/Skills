@@ -31,7 +31,7 @@ eval(
     model="/scratch/fsw/portfolios/llmservice/users/yachen/cache/DeepSeek-V3.2",
     server_container="/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/container/nemo-skills-sglang-v32.sqsh",
     with_sandbox=True,
-    expname=f"generate_{i}",
+    expname=f"eval_{i}",
     server_type='sglang',
     server_gpus=gpus,
     partition='batch',
