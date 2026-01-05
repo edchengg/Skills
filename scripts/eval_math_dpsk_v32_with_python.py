@@ -13,6 +13,7 @@ server_args = (
     "--reasoning-parser deepseek-v3 "
     "--log-requests "
     "--mem-fraction-static=0.8 "
+    "--tool-call-parser deepseekv32 "
 )
 
 eval(
