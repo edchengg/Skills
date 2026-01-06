@@ -2,7 +2,7 @@ from nemo_skills.pipeline.cli import generate, wrap_arguments, eval
 
 cluster = "slurm"
 output_dir = "/lustre/fsw/portfolios/llmservice/users/yachen/AceMath/Skills/zihan-sft-eval/"
-gpus=8
+gpus=1
 server_nodes=1
 i=0
 model_name = "zihan-sft-29916"
