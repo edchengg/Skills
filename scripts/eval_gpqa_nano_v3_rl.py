@@ -14,6 +14,7 @@ for step in [50, 100, 150, 200, 250]:
                 "++inference.tokens_to_generate=120000 "
                 "++inference.temperature=1.0 "
                 "++inference.top_p=1.0 "
+                "++prompt_config=eval/aai/mcq-10choices-boxed "
             ),
             cluster=cluster,
             expname=f"{model_name}-no-python",
@@ -23,7 +24,7 @@ for step in [50, 100, 150, 200, 250]:
             num_chunks=4,
             benchmarks=f"{benchmark}:1",
             server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching",
-            output_dir=output_dir + model_name + "/no-python",
+            output_dir=output_dir + model_name + "/no-python-boxed",
         )
 
     model_name = f"nano-v3-rl-nosci-step-{step}"
@@ -34,6 +35,7 @@ for step in [50, 100, 150, 200, 250]:
                 "++inference.tokens_to_generate=120000 "
                 "++inference.temperature=1.0 "
                 "++inference.top_p=1.0 "
+                "++prompt_config=eval/aai/mcq-10choices-boxed "
             ),
             cluster=cluster,
             expname=f"{model_name}-no-python",
@@ -43,5 +45,5 @@ for step in [50, 100, 150, 200, 250]:
             num_chunks=4,
             benchmarks=f"{benchmark}:1",
             server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching",
-            output_dir=output_dir + model_name + "/no-python",
+            output_dir=output_dir + model_name + "/no-python-boxed",
         )
