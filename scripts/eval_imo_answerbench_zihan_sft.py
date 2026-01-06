@@ -48,24 +48,24 @@ model_path = "/lustre/fsw/portfolios/llmservice/users/zihanl/inform/megatron2hf/
     #     output_dir=output_dir + model_name + "/with-python",
     # )
 
-for benchmark in ["imo_answerbench"]:
-    eval(
-        ctx=wrap_arguments(
-            "++inference.tokens_to_generate=120000 "
-            "++inference.temperature=1.0 "
-            "++inference.top_p=1.0 "
-            "++prompt_config=generic/math_sft_notool "
-        ),
-        cluster=cluster,
-        expname=f"{model_name}-no-python",
-        model=model_path,
-        server_type='vllm',
-        server_gpus=8,
-        num_chunks=4,
-        benchmarks=f"{benchmark}:8",
-        server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching",
-        output_dir=output_dir + model_name + "/no-python",
-    )
+# for benchmark in ["imo_answerbench"]:
+#     eval(
+#         ctx=wrap_arguments(
+#             "++inference.tokens_to_generate=120000 "
+#             "++inference.temperature=1.0 "
+#             "++inference.top_p=1.0 "
+#             "++prompt_config=generic/math_sft_notool "
+#         ),
+#         cluster=cluster,
+#         expname=f"{model_name}-no-python",
+#         model=model_path,
+#         server_type='vllm',
+#         server_gpus=8,
+#         num_chunks=4,
+#         benchmarks=f"{benchmark}:8",
+#         server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching",
+#         output_dir=output_dir + model_name + "/no-python",
+#     )
 
     # # with python
     # eval(
