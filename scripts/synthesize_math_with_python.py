@@ -5,7 +5,7 @@ cluster = "slurm"  # change this to match your cluster config name
 generate(
     ctx=wrap_arguments(
         # we are using fewer tokens than max context length as code output isn't accounted for
-        "++inference.tokens_to_generate=96000 "
+        "++inference.tokens_to_generate=64000 "
         # recommended inference settings including prompt config
         "++inference.temperature=1.0 "
         "++inference.top_p=1.0 "
@@ -45,7 +45,7 @@ generate(
     # (useful if your cluster has a fixed timeout per job)
     # set these according to your cluster configuration
     num_chunks=1,
-    dependent_jobs=2,
+    dependent_jobs=0,
     starting_seed=0,
     num_random_seeds=32,
 )

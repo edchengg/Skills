@@ -8,10 +8,10 @@ i=0
 generate(
     ctx=wrap_arguments(
         "++skip_filled=True "
-        "++prompt_config=dpsk/math_proof_gen "
+        "++prompt_config=gpt-oss/math_proof_gen "
         "++inference.top_p=0.95 "
-        "++inference.tokens_to_generate=120000 " 
-        "++max_concurrent_requests=1024 "
+        "++inference.tokens_to_generate=96000 " 
+        "++max_concurrent_requests=256 "
         "++inference.endpoint_type=chat "
         "++chat_template_kwargs.thinking=true "
     ),
@@ -19,7 +19,7 @@ generate(
     model="/scratch/fsw/portfolios/llmservice/users/yachen/cache/DeepSeek-V3.2-Speciale",
     server_container="/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/container/nemo-skills-sglang-v32.sqsh",
     with_sandbox=False,
-    expname=f"generate_{i}",
+    expname=f"dpsk_{i}",
     server_type='sglang',
     server_gpus=gpus,
     partition='batch',
