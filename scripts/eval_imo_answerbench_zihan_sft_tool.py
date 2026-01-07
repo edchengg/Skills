@@ -27,7 +27,7 @@ for benchmark in ["aime25"]:
         with_sandbox=True,
         benchmarks=f"{benchmark}:1",
         server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching --enable-auto-tool-choice --tool-call-parser hermes",
-        output_dir=output_dir + model_name + "/with-python",
+        output_dir=output_dir + model_name + "/with-python-hermes",
     )
 
 # for benchmark in ["imo_answerbench"]:
