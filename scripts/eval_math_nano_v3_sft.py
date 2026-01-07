@@ -19,7 +19,7 @@ eval(
     server_type='vllm',
     server_gpus=8,
     num_chunks=4,
-    benchmarks="mmlu_pro:1",
+    benchmarks="mmlu-pro:1",
     server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching",
     output_dir=output_dir + model_name + "/no-python",
 )
@@ -37,7 +37,7 @@ eval(
     server_type='vllm',
     server_gpus=8,
     num_chunks=4,
-    benchmarks="mmlu_pro:1",
+    benchmarks="mmlu-pro:1",
     server_args="--mamba_ssm_cache_dtype float32 --no-enable-prefix-caching",
     output_dir=output_dir + model_name + "/no-python-boxed",
 )
