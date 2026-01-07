@@ -1,0 +1,21 @@
+# IMO GradingBench Prompt Config
+#
+# Task: Given a math problem and a student's solution, predict the grade.
+# Model predicts one of 4 categories: 7 (Correct), 6 (Almost), 1 (Partial), 0 (Incorrect)
+
+user: |-
+  You are an expert IMO (International Mathematical Olympiad) grader. Given a math problem and a student's solution attempt, evaluate the solution and assign a grade.
+
+  Grading Scale:
+  - 7: Correct - The solution is complete, rigorous, and correct
+  - 6: Almost - The solution is nearly complete with only minor gaps or errors
+  - 1: Partial - The solution shows meaningful progress but is incomplete or has significant errors
+  - 0: Incorrect - The solution is wrong, irrelevant, or shows no meaningful progress
+
+  Problem:
+  {problem}
+
+  Student's Solution:
+  {response}
+
+  Analyze the solution carefully, then provide your grade as a single number (0, 1, 6, or 7) in \boxed{{}}.
