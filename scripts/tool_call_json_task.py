@@ -13,6 +13,7 @@ This module provides a custom CodeExecutionWrapper that parses JSON to extract c
 import json
 import re
 import logging
+import sys
 from typing import Dict, Any
 
 from nemo_skills.inference.model.code_execution import CodeExecutionWrapper, CodeExecutionConfig
@@ -128,3 +129,33 @@ class JsonToolCallGenerationTask(GenerationTask):
 
 # This is what nemo_skills pipeline looks for
 GENERATION_TASK_CLASS = JsonToolCallGenerationTask
+
+
+# Entry point for running as a script
+import hydra
+from nemo_skills.inference.generate import GenerateSolutionsConfig, get_help_message, server_params, sandbox_params
+from nemo_skills.utils import setup_logging
+
+
+@hydra.main(version_base=None, config_name="base_generation_config")
+def generate(cfg: GenerateSolutionsConfig):
+    cfg = GenerateSolutionsConfig(_init_nested=True, **cfg)
+    LOG.info("Config used: %s", cfg)
+
+    task = JsonToolCallGenerationTask(cfg)
+    task.generate()
+
+
+HELP_MESSAGE = get_help_message(
+    GenerateSolutionsConfig,
+    server_params=server_params(),
+    sandbox_params=sandbox_params(),
+)
+
+
+if __name__ == "__main__":
+    if "--help" in sys.argv or "-h" in sys.argv:
+        print(HELP_MESSAGE)
+    else:
+        setup_logging()
+        generate()
