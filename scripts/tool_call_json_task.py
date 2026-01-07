@@ -114,11 +114,11 @@ class JsonToolCallGenerationTask(GenerationTask):
 
         if self.cfg.code_execution:
             # Use our custom JSON tool call wrapper
+            # Note: code_execution config is already in self.cfg.server
             llm = get_json_tool_code_execution_model(
                 **self.cfg.server,
                 tokenizer=self.tokenizer,
                 sandbox=self.sandbox,
-                code_execution=self.cfg.server.get('code_execution', {})
             )
         else:
             from nemo_skills.inference.model import get_model
