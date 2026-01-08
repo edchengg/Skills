@@ -36,7 +36,7 @@ generate(
 generate(
     ctx=wrap_arguments(
         "++skip_filled=True "
-        "++prompt_config=dpsk/math_proof_eval_grading "
+        "++prompt_config=dpsk/math_proof_eval "
         "++inference.top_p=0.95 "
         "++inference.tokens_to_generate=120000 " 
         "++max_concurrent_requests=1024 "
