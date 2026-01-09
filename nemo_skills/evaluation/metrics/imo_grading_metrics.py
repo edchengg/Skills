@@ -18,7 +18,8 @@ IMO Grading Metrics for IMO GradingBench.
 Task: Given a math problem and a student's solution, predict the grade.
 - Model predicts one of 4 categories: 7 (Correct), 6 (Almost), 1 (Partial), 0 (Incorrect)
 - Accuracy: Predicted category vs Reward category (expected_answer)
-- MAE: |Predicted category - actual Points (0-7)|
+- MAE: Mean Absolute Error as percentage = |Predicted category - actual Points (0-7)| / 7 * 100
+  - The golden (best possible) MAE is 3.9% due to the simplified 4-category grading scale
 """
 
 import re
@@ -159,18 +160,23 @@ class IMOGradingMetrics(BaseMetrics):
         metrics_dict = super().get_metrics()
 
         # Add MAE to all aggregation modes
+        # MAE is reported as percentage: |predicted - points| / 7 * 100
+        # The golden (best possible) MAE is 3.9% due to simplified 4-category grading
         for agg_mode in metrics_dict:
             if self.total > 0:
-                # MAE is already a raw value, not a percentage
-                metrics_dict[agg_mode]["mae"] = self.mae_sum / self.total
+                mae_absolute = self.mae_sum / self.total
+                # Convert to percentage (divide by max score 7, multiply by 100)
+                metrics_dict[agg_mode]["mae"] = (mae_absolute / 7) * 100
 
         # Add per-class MAE stats
         per_class_mae = {}
         for reward_label, stats in self.mae_counts.items():
             if stats["count"] > 0:
+                mae_absolute = stats["sum"] / stats["count"]
                 per_class_mae[reward_label] = {
                     "count": stats["count"],
-                    "mae": stats["sum"] / stats["count"],
+                    # Convert to percentage for consistency
+                    "mae": (mae_absolute / 7) * 100,
                 }
         if per_class_mae:
             for agg_mode in metrics_dict:
@@ -193,6 +199,6 @@ class IMOGradingMetrics(BaseMetrics):
             "avg_tokens": as_int,
             "gen_seconds": as_int,
             "grading_correct": as_percentage,
-            "mae": as_float,
+            "mae": as_percentage,  # MAE is now reported as percentage
             "no_answer": as_percentage,
         }
