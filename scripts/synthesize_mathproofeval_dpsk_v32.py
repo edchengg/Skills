@@ -25,7 +25,7 @@ generate(
     partition='batch',
     server_nodes=server_nodes,
     num_chunks=16,
-    dependent_jobs=1,
+    dependent_jobs=2,
     starting_seed=0,
     num_random_seeds=1,
     input_file="/scratch/fsw/portfolios/llmservice/users/yachen/AceMath/aceproof/data_processing_sft/data/proofs/math_proof_eval_input_0109/problem_proof.jsonl",
